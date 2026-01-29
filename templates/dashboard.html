@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Attendance Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .user-info {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .user-info span {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .logout-btn {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background: #ff5252;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .card-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .welcome-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .welcome-section h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .welcome-section p {
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>📊 Attendance Tracker Dashboard</h1>
+            <div class="user-info">
+                <span>Welcome, <strong>{{ user }}</strong></span>
+                <a href="/logout" class="logout-btn">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="welcome-section">
+            <h2>Welcome to Attendance Tracker! 👋</h2>
+            <p>
+                This is your central hub for managing and tracking attendance. You can mark your attendance, 
+                view your attendance history, and stay updated with your attendance status. Select an option 
+                below to get started.
+            </p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-icon">✓</div>
+                <h2>Mark Attendance</h2>
+                <p>Mark your attendance for today or previous dates</p>
+                <a href="/attendance" class="card-btn">Go to Attendance</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h2>View Records</h2>
+                <p>Check your attendance history and status</p>
+                <a href="/records" class="card-btn">View Records</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⚙️</div>
+                <h2>Settings</h2>
+                <p>Update your profile and preferences</p>
+                <a href="#" class="card-btn">Coming Soon</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
